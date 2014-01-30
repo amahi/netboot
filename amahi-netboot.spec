@@ -1,5 +1,5 @@
 Name:           amahi-netboot
-Version: 0.2
+Version: 0.5
 Release:       1
 
 Summary:        Amahi Netboot - Boot over the network
@@ -13,6 +13,7 @@ BuildArch:      noarch
 Requires: tftp-server
 
 %define debug_package %{nil}
+%define _binaries_in_noarch_packages_terminate_build 0
 
 %description
 Amahi Netboot - Boot over the network from your HDA
@@ -36,7 +37,7 @@ rm -rf %{buildroot}
 
 # restart dns
 if [[ -a /etc/xinetd.d/tftp ]] ; then
-	sed -i -e 's|disabled.*=.*$|disabled = no|' /etc/xinetd.d/tftp
+	sed -i -e 's|disable.*=.*$|disable = no|' /etc/xinetd.d/tftp
 	/bin/systemctl enable xinetd.service &> /dev/null
 	/bin/systemctl restart dnsmasq.service &> /dev/null
 fi
@@ -49,6 +50,11 @@ fi
 %{_sysconfdir}/dnsmasq.d/amahi-pxe.conf
 
 %changelog
+* Wed Jan 29 2014 Carlos Puchol <cpg+git@amahi.org>
+- thanks to damonq for the patches
+- updated amahi-pxe.conf   added lines: enable-tftp  tftp-root=/var/lib/tftpboot
+- updated amahi-pxe.conf   removed ip entry
+- updated amahi-netboot.spec: added "%define" entry to resolve build error "Arch dependent binaries in noarch package"
 * Wed Jul 17 2013 Carlos Puchol <cpg+git@amahi.org>
 - updated for fedora 19
 * Sun Aug  2 2009 Carlos Puchol <cpg+git@amahi.org>
