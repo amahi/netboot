@@ -1,5 +1,5 @@
 Name:           amahi-netboot
-Version: 0.6
+Version: 0.7
 Release:       1
 
 Summary:        Amahi Netboot - Boot over the network
@@ -10,7 +10,7 @@ Source:         %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
 
-Requires: tftp-server
+Requires: tftp-server xinetd
 
 %define debug_package %{nil}
 %define _binaries_in_noarch_packages_terminate_build 0
