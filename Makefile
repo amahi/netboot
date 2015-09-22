@@ -1,5 +1,5 @@
 
-VERSION=0.5
+VERSION=0.6
 ARCH=noarch
 PACKAGE=amahi-netboot
 RPMBUILDDIR= $(HOME)/rpmbuild

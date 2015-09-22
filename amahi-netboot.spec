@@ -1,5 +1,5 @@
 Name:           amahi-netboot
-Version: 0.5
+Version: 0.6
 Release:       1
 
 Summary:        Amahi Netboot - Boot over the network
