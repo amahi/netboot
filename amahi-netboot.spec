@@ -54,7 +54,7 @@ fi
 - thanks to damonq for the patches
 - updated amahi-pxe.conf   added lines: enable-tftp  tftp-root=/var/lib/tftpboot
 - updated amahi-pxe.conf   removed ip entry
-- updated amahi-netboot.spec: added "%define" entry to resolve build error "Arch dependent binaries in noarch package"
+- updated amahi-netboot.spec: added "define" entry to resolve build error "Arch dependent binaries in noarch package"
 * Wed Jul 17 2013 Carlos Puchol <cpg+git@amahi.org>
 - updated for fedora 19
 * Sun Aug  2 2009 Carlos Puchol <cpg+git@amahi.org>
